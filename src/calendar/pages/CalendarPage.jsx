@@ -14,7 +14,7 @@ export const CalendarPage = () => {
     const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'week')
 
 
-    const eventStyleGetter = (event, start, end, isSelected) => {
+    const eventStyleGetter = () => {
 
        const style = {
            backgroundColor: '#347CF7',
@@ -28,7 +28,7 @@ export const CalendarPage = () => {
        }
     }
 
-    const onDoubleClick = (event) => {
+    const onDoubleClick = () => {
         openDateModal()
     }
 
@@ -38,7 +38,6 @@ export const CalendarPage = () => {
     }
 
     const onViewChanged = (event) => {
-        console.log({viewChanged: event})
         localStorage.setItem('lastView', event);
         setLastView(event);
     }
